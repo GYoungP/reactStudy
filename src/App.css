@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
+body {
+  background: #ececec;
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+.App {
+  text-align: center;
+}
+.App .signIn {
+  margin: 100px auto;
+  width: 720px;
+  min-width: 720px;
+  background: #fff;
+  border-radius: 20px;
+  padding: 100px 20px 120px;
+  box-shadow: 2px 4px 15px rgba(169, 169, 169, 0.4);
+}
+.App .signIn h2 {
+  font-size: 36px;
+  font-weight: 900;
+  margin-bottom: 60px;
+}
+.App .signIn input {
+  display: block;
+  width: 100%;
+  border-radius: 5px;
+  margin: 20px 0;
+  border: 1px solid #ccc;
+  height: 50px;
+  padding: 0 25px;
+}
+.App .signIn button {
+  margin-top: 20px;
+  width: 100%;
+  border: 0;
+  font-size: 16px;
+  padding: 20px;
+  font-weight: 600;
+  border-radius: 5px;
+  background: #8500c9;
+  color: #fff;
+}
+.App .signIn button:hover {
+  background: #660299;
+  cursor: pointer;
+}
