@@ -17,7 +17,6 @@ const SignIn = () => {
                 <input
                     type="text"
                     onChange={(e) => {
-                        console.log(e.target.value);
                         setUserId(e.target.value);
                     }}
                     placeholder="아이디를 입력해주세요."
