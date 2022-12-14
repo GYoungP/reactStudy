@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaTrash, FaCheck } from 'react-icons/fa';
 
 const TodoItem = ({ todo, onRemove, onToggle }) => {
     const { id, text, checked } = todo;
@@ -16,8 +17,12 @@ const TodoItem = ({ todo, onRemove, onToggle }) => {
                 </div>
             )}
 
-            <button onClick={() => onToggle(id)}>체크하기</button>
-            <button onClick={() => onRemove(id)}>삭제하기</button>
+            <button onClick={() => onToggle(id)}>
+                <FaCheck />
+            </button>
+            <button onClick={() => onRemove(id)}>
+                <FaTrash />
+            </button>
         </li>
     );
 };

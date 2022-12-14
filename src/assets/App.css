@@ -45,3 +45,50 @@ body {
   background: #660299;
   cursor: pointer;
 }
+.App .Todo h1 {
+  font-size: 50px;
+  font-weight: 600;
+}
+.App .Todo .TodoCreate {
+  margin-top: 30px;
+}
+.App .Todo .TodoCreate .inputBox {
+  position: relative;
+  display: inline-block;
+}
+.App .Todo .TodoCreate .inputBox input {
+  width: 400px;
+  height: 42px;
+  line-height: 42px;
+  padding-left: 20px;
+  font-size: 14px;
+  border: 0;
+  border-radius: 5px;
+}
+.App .Todo .TodoCreate .inputBox .plusBtn {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  color: #ff5252;
+  top: calc(50% - 15px);
+  right: 10px;
+  cursor: pointer;
+}
+.App .Todo .TodoCreate .inputBox .plusBtn:active {
+  color: #df3131;
+}
+.App .Todo .TodoCreate select {
+  width: 160px;
+  height: 42px;
+  border: 0;
+  border-radius: 5px;
+  margin-left: 10px;
+}
+.App .Todo .TodoList {
+  margin-top: 50px;
+}
+.App .Todo .TodoList li {
+  width: 500px;
+  background: #fff;
+  margin-bottom: 5px;
+}

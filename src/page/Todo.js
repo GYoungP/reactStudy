@@ -39,8 +39,8 @@ const Todo = () => {
     );
 
     return (
-        <div>
-            <h1>To-do List</h1>
+        <div className="Todo">
+            <h1>To-Do List</h1>
             <TodoCreate />
             <TodoList todos={todos} onRemove={onRemove} onToggle={onToggle} />
         </div>
