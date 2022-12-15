@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { FaPlusSquare } from 'react-icons/fa';
 
-const TodoCreate = () => {
-    const [todoCreate, setTodoCreate] = useState('');
+const TodoCreate = ({ onCreate }) => {
+    const [value, setValue] = useState('');
 
-    const onSubmit = () => {
-        console.log(todoCreate);
+    const onSubmit = (e) => {
+        onCreate(value);
+        setValue('');
+        console.log(value);
     };
 
     return (
@@ -14,9 +16,9 @@ const TodoCreate = () => {
                 <div className="inputBox">
                     <input
                         onChange={(e) => {
-                            setTodoCreate(e.target.value);
+                            setValue(e.target.value);
                         }}
-                        value={todoCreate}
+                        value={value}
                         placeholder="todo 추가하기"
                     />
                     <FaPlusSquare onClick={onSubmit} className="plusBtn" />

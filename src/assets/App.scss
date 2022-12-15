@@ -87,10 +87,34 @@ body {
         }
         .TodoList {
             margin-top: 50px;
+            display: inline-block;
             li {
                 width: 500px;
                 background: #fff;
                 margin-bottom: 5px;
+                display: flex;
+                align-items: center;
+                height: 42px;
+                line-height: 42px;
+                .check,
+                .unCheck {
+                    width: 416px;
+                    padding-left: 20px;
+                    text-align: left;
+                }
+                button {
+                    width: 42px;
+                    height: 42px;
+                    border: 0;
+                    color: #fff;
+                    font-weight: bold;
+                    &.ckBtn {
+                        background: #20eb20;
+                    }
+                    &.delBtn {
+                        background: #ff5252;
+                    }
+                }
             }
         }
     }

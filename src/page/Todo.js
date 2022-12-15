@@ -1,4 +1,5 @@
-import React, { useCallback, useState } from 'react';
+import { getValue } from '@testing-library/user-event/dist/utils';
+import React, { useCallback, useRef, useState } from 'react';
 import TodoCreate from '../components/TodoCreate';
 import TodoList from '../components/TodoList';
 
@@ -21,6 +22,17 @@ const Todo = () => {
         },
     ]);
 
+    const todoId = useRef(4);
+    const onCreate = (id, text, checked) => {
+        const newTodos = {
+            id: todoId.current,
+            text: '',
+            checked,
+        };
+        todoId.current += 1;
+        setTodos([newTodos, ...todos]);
+    };
+
     const onToggle = useCallback(
         (id) => {
             setTodos(
@@ -41,7 +53,7 @@ const Todo = () => {
     return (
         <div className="Todo">
             <h1>To-Do List</h1>
-            <TodoCreate />
+            <TodoCreate onCreate={onCreate} />
             <TodoList todos={todos} onRemove={onRemove} onToggle={onToggle} />
         </div>
     );
