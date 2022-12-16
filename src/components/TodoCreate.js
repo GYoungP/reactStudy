@@ -4,10 +4,14 @@ import { FaPlusSquare } from 'react-icons/fa';
 const TodoCreate = ({ onCreate }) => {
     const [value, setValue] = useState('');
 
-    const onSubmit = (e) => {
+    const handleChangeState = (e) => {
+        setValue(e.target.value);
+        console.log(e.target.value);
+    };
+    const onSubmit = () => {
         onCreate(value);
         setValue('');
-        console.log(value);
+        console.log(value.id);
     };
 
     return (
@@ -15,9 +19,7 @@ const TodoCreate = ({ onCreate }) => {
             <div className="TodoCreate">
                 <div className="inputBox">
                     <input
-                        onChange={(e) => {
-                            setValue(e.target.value);
-                        }}
+                        onChange={handleChangeState}
                         value={value}
                         placeholder="todo 추가하기"
                     />

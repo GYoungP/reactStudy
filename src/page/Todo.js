@@ -23,32 +23,30 @@ const Todo = () => {
     ]);
 
     const todoId = useRef(4);
-    const onCreate = (id, text, checked) => {
+
+    const onCreate = (text) => {
         const newTodos = {
             id: todoId.current,
-            text: '',
-            checked,
+            text,
+            checked: true,
         };
         todoId.current += 1;
         setTodos([newTodos, ...todos]);
     };
 
-    const onToggle = useCallback(
-        (id) => {
-            setTodos(
-                todos.map((todo) =>
-                    todo.id === id ? { ...todo, checked: !todo.checked } : todo
-                )
-            );
-        },
-        [todos]
-    );
-    const onRemove = useCallback(
-        (id) => {
-            setTodos(todos.filter((todo) => todo.id !== id));
-        },
-        [todos]
-    );
+    const onToggle = (id) => {
+        console.log(todos);
+        setTodos(
+            todos.map((it) =>
+                it.id === id ? { ...it, checked: !it.checked } : it
+            )
+        );
+    };
+
+    const onRemove = (id) => {
+        console.log(id);
+        setTodos(todos.filter((it) => it.id !== id));
+    };
 
     return (
         <div className="Todo">
